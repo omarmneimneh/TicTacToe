@@ -1,0 +1,83 @@
+*{
+    margin: 0 auto;
+}
+:root{
+    --square-size:200px;
+    --text-size: calc(var(--square-size)*.9)
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 600px;
+    height: 600px; 
+    justify-content: center;
+    align-items: center;
+}
+
+.square{
+    padding: 5px;
+    height: var(--square-size);
+    width: var(--square-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    cursor: pointer;
+}
+
+.square.X{
+    font-size: var(--text-size);
+    font-weight: 600;
+}
+
+.square.O{
+    font-size: var(--text-size);
+    font-weight: 600;
+}
+
+.winning-message{
+    display: none;
+}
+
+#message{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.winning-message.show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    opacity: 90%;
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#btn{
+    cursor: pointer;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 25px;
+}
+
+#btn:hover{
+    color: white;
+    background-color: black;
+    border: none;
+    transform: scale(1.1);
+}
